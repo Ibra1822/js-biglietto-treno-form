@@ -14,10 +14,7 @@ let etaInput = document.querySelector('#eta');
 const bottoneGenera = document.querySelector('#btn')
 let prezzoStandard;
 
-// evento click su bottoneGenera
-
-// elemento.addEventListener(nomeEvento, coseDaFare)
-
+let Risultato;
 
 bottoneGenera.addEventListener('click', function(e) {
   e.preventDefault();
@@ -29,71 +26,54 @@ bottoneGenera.addEventListener('click', function(e) {
   console.log('Kilometri ', km)
   console.log('Eta', eta)
   
-  //continuare qui
-
   let prezzokm = 0.21;
 
   let prezzoStandard =  km * prezzokm;
 
   console.log('prezzostandard',prezzoStandard);
 
-  let maggiorenne = document.querySelector('#Maggiorenne');
-
-  let minorenne = document.querySelector('#Minore');
-
-  let anziano = document.querySelector('#Anziano');
-
-  // maggiorenne = 18;
-
-  // minorenne = 17;
-
-  // anziano = 66;
-
   let scontoMinori = 0.20;
 
   let  scontoTotMinori;
 
-  if(eta === minorenne){
+  let scontoAnziani = 0.50;
+
+  let scontoTotAnziani;
+
+  if(eta === 'Minore'){
 
     scontoTotMinori =  prezzoStandard - prezzoStandard * scontoMinori;
+
+    console.log('sonto minori attivo', scontoTotMinori);
+    
+    document.getElementById('prova').innerHTML=` Grazie  ${nomeCognome}  Complimenti hai diritto allo sconto minori.
+    Ora devi pagare 
+     ${scontoTotMinori.toFixed(2)}  Euro
+    `;
+
+    const effect = document.querySelector('#prova')
+
+    effect.classList.add('effect')
   
+  }else if(eta === 'Anziano'){
+
+    scontoTotAnziani = prezzoStandard - prezzoStandard * scontoAnziani;
+    console.log('sonto anziani attivo', scontoTotAnziani);
+
+    document.getElementById('prova').innerHTML=` Grazie  ${nomeCognome} Complimenti hai diritto allo sconto Over 65.
+    Ora devi pagare 
+     ${scontoTotAnziani.toFixed(2)}  Euro
+    `;
+
+  }else{
+    console.log(prezzoStandard);
+
+    document.getElementById('prova').innerHTML=`Grazie per l'acquisto  ${nomeCognome} devi pagare 
+     ${prezzoStandard.toFixed(2)}  Euro
+    `;
   }
-
-  console.log('sonto minori attivo', scontoTotMinori);
-
-
-
 })
 
 
 
-// const etaMinori = 18;
- 
-// const scontoMinori=  0.20;
 
-// let scontoTotMinori = prezzoStandard - prezzoStandard * scontoMinori;
-
-
-// const etaAnziani = 65; 
-
-// const scontoAnziani = 0.50;
-
-// let scontoTotAnziani = prezzoStandard - prezzoStandard * scontoAnziani;
-
-
-// if(eta < etaMinori){
-
-//   console.log(scontoTotMinori);
-
-// }
-
-// else if(eta > etaAnziani){
-  
-//   console.log('Hai diritto a',scontoTotAnziani);
-
-
-// }else{
-
-//   console.log(prezzoStandard);
-
-// }
