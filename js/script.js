@@ -40,37 +40,63 @@ bottoneGenera.addEventListener('click', function(e) {
 
   let scontoTotAnziani;
 
+  const max= 100000;
+
+  const min= 90000;
+
+
   if(eta === 'Minore'){
 
     scontoTotMinori =  prezzoStandard - prezzoStandard * scontoMinori;
 
+    document.querySelector('.nome-p').innerHTML= nomeCognome;
+
     console.log('sonto minori attivo', scontoTotMinori);
+
+    document.getElementById('offerta').innerHTML='Sconto Minori';
+
+    document.getElementById('carrozza').innerHTML= Math.floor(Math.random()* 12) +1;
+
+    document.getElementById('codice').innerHTML= Math.floor(Math.random() * (max - min) + min);
     
-    document.getElementById('prova').innerHTML=` Grazie  ${nomeCognome}  Complimenti hai diritto allo sconto minori.
-    Ora devi pagare 
-     ${scontoTotMinori.toFixed(2)}  Euro
-    `;
+    document.getElementById('costo').innerHTML= scontoTotMinori.toFixed(2);
 
-    const effect = document.querySelector('#prova')
-
-    effect.classList.add('effect')
+    document.getElementById("con-title-down").style.opacity = "1";
   
   }else if(eta === 'Anziano'){
 
     scontoTotAnziani = prezzoStandard - prezzoStandard * scontoAnziani;
     console.log('sonto anziani attivo', scontoTotAnziani);
 
-    document.getElementById('prova').innerHTML=` Grazie  ${nomeCognome} Complimenti hai diritto allo sconto Over 65.
-    Ora devi pagare 
-     ${scontoTotAnziani.toFixed(2)}  Euro
-    `;
+    document.querySelector('.nome-p').innerHTML= nomeCognome;
+
+    document.getElementById('offerta').innerHTML='Sconto over 65';
+
+    document.getElementById('carrozza').innerHTML=Math.floor(Math.random ()* 12) +1;
+
+    document.getElementById('codice').innerHTML= Math.floor(Math.random() * (max - min) + min);
+
+    document.getElementById('costo').innerHTML= scontoTotAnziani.toFixed(2);
+
+    document.getElementById("con-title-down").style.opacity = "1";
+
 
   }else{
     console.log(prezzoStandard);
 
-    document.getElementById('prova').innerHTML=`Grazie per l'acquisto  ${nomeCognome} devi pagare 
-     ${prezzoStandard.toFixed(2)}  Euro
-    `;
+    document.querySelector('.nome-p').innerHTML= nomeCognome;
+
+    document.getElementById('offerta').innerHTML='Prezzo Standard';
+
+    document.getElementById('carrozza').innerHTML=Math.floor(Math.random ()* 12) +1;
+
+    document.getElementById('codice').innerHTML= Math.floor(Math.random() * (max - min) + min);
+
+    document.getElementById('costo').innerHTML= prezzoStandard.toFixed(2);
+
+    document.getElementById("con-title-down").style.opacity = "1";
+
+    
   }
 })
 

@@ -6,42 +6,142 @@
 
 body{
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
-background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+background: #ED213A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 .container{
   text-align: center;
   margin: 50px auto;
-  box-shadow: 0 0 100px #fff;
-  width: 80%;
-  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-  transition: all 2s; 
+  box-shadow: 0 0 20px #fff;
+  width: 70%;
   padding: 30px;
-    color: #fff;
+  border-radius: 20px;
+  background-color: #FFFFFF;
 }
 
 
-.container h1,h2{
-  margin-bottom: 20px;
-  
+ h1{
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 2.5rem;
 }
 
+.container-all{
+  display: flex;
+  justify-content: center;
+}
+
+.container-all p{
+  font-size: 1.2rem;
+  color: #BE235C;
+}
 
 .inserisci{
-padding: 15px 30px;
-font-size: 1.1rem;
-border-radius: 10px;
+padding: 7px 15px;
+font-size: 1rem;
+margin: 10px 35px;
+border-radius: 5px;
+}
 
+.inserisci:focus{
+  background-color: #B91450;
+  color: #fff;
 }
 
 .bottone{
-  padding: 15px;
+  padding: 5px 15px;
   font-size: 1.1rem;
-  border-radius: 10px;
   background-color: #fff;
+  margin: 20px 10px;
+  border-radius: 5px;
 }
 
-.effect{
-transition: all 2s;
-color: aliceblue;
+/* Fine calcolatore  */
+
+#con-title-down {
+   opacity: 0;
+  transition: all 1s;
 }
+
+
+#con-title-down h2{
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#con-down-all{
+  width: 70%;
+  margin: auto;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 20px #fff;
+  border-radius: 5px;
+
+}
+
+#con-down-all h3{
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.con-biglietto{
+  margin:  auto;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid gainsboro;
+  padding: 5px;
+
+}
+
+.nome-persona{
+  width: 25%;
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nome-persona strong{
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.nome-persona .nome-p{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 35px;
+  color: #fff;
+}
+
+thead tr th:first-child{
+  width: 300px;
+  font-size: 1.5rem;
+}
+
+thead tr th{
+  font-size: 1.5rem;
+  padding:  0px 50px ;
+}
+
+
+#offerta,
+#carrozza,
+#codice,
+#costo{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
